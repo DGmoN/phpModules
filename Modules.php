@@ -42,13 +42,16 @@ if(file_exists($__MODULE_CONFIG)){
 	$php_modules_config = json_decode(file_get_contents($__MODULE_CONFIG));
 	foreach($php_modules_config as $st){
 		__APPEND_LOG("Module loading: ".$st->MODULEName);
-		$hold = new Module($st->MODULEName, $st->MODULESrc);
-		if($hold->isValid()){
-			$__MODULE_REGISTRY[$st->MODULEName] = $hold;
+		
+		$module_class_file = $st->MODULESrc."module.php";
+		
+		if(file_exists($module_class_file)){
+			require_once($module_class_file);
+			$cName = $st->MODULEName."Module";
+			$__MODULE_REGISTRY[$st->MODULEName] = new $cName($st);
 			__APPEND_LOG("Module ok: ".$st->MODULEName);
 		}else{
 			__APPEND_LOG("Module loading FAILED: ".$st->MODULEName);
-			unset($hold);
 		}
 			
 	}
