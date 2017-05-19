@@ -1,8 +1,8 @@
 ###		phpModules		###
 ---------------------------
 
-PHP modules is to be a modular librairy that allows you to only use the most nessasairy
-memory per thread without having to load the entire librairy.
+PHP modules is to be a modular library that allows you to only use the most necessary
+Memory per thread without having to load the entire library.
 
 
 ---HOW TO---
@@ -15,7 +15,7 @@ memory per thread without having to load the entire librairy.
 		__LOG_FILE			->	Defines logfile output, default = "log.txt";
 		
 		__MODULE_CONFIG		->	Designates the config file, This should house a json string 
-								defining module spesific config values
+								defining module specific config values
 								
 		__MODULE_REGISTRY	->	An associative array of all the registered modules
 	
@@ -33,10 +33,10 @@ memory per thread without having to load the entire librairy.
 				
 		create($create, $args=array())
 			->	This function is intended to act as a central for object creation from within
-				the module, keeping the need to go scout for each function decliration to a 
+				the module, keeping the need to go scout for each function declaration to a 
 				minimum
 				
-	>>>EXACUTION<<<
+	>>>EXECUTION<<<
 	---------------
 		>Start from "require"
 			if __LOGGING_ENABLED
@@ -49,7 +49,7 @@ memory per thread without having to load the entire librairy.
 				find and create MODULE objects
 				register them in registry
 				
-			to load the module you then referance them by:
+			to load the module you then reference them by:
 				__MODULE_REGISTRY[MODULE_NAME]
 				
 				
