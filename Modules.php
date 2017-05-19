@@ -3,12 +3,13 @@
 
 //	__CURRENT_MODULE	->	Designates module being used
 
-//	__LOGGIN_ENABLED	-> 	Enables/Disables logging
+//	__LOGGING_ENABLED	-> 	Enables/Disables logging
 //	__LOG_FILE			->	Defines logfile output, default = "log.txt";
 // 	__MODULE_CONFIG		->	Designates the config file
 //	__MODULE_REGISTRY	->	An array of all the registered modules
 
 $__MODULE_REGISTRY 	=	array();
+
 if(!isset($__LOGGING_ENABLED))
 	$__LOGGING_ENABLED = true;
 
