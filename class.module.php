@@ -12,6 +12,7 @@ class Module{
 	public $MODULEName;
 	public $MODULESrc;
 	public $MODULEScripts = array();
+	public $LOADED = false;
 	
 	protected $MEMORY = 0;
 	
@@ -21,6 +22,8 @@ class Module{
 		$this->MODULEScripts = $json->MODULEScripts;
 	}
 	
+	
+
 	
 	// Loads the module dependencies
 	public function Load(){
